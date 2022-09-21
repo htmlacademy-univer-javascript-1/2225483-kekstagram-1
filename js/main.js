@@ -12,4 +12,5 @@ function fitString ( stringToTest, maxLeght){
     }
     else return true
 }
-console.log(fitString('fgg',7))
+getRandomIntInclusive(1,2)
+fitString('1',2)
