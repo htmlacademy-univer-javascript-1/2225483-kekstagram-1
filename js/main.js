@@ -10,7 +10,7 @@ function fitString ( stringToTest, maxLeght){
   if (stringToTestStr.length > maxLeght){
     return false;
   }
-    else return true
+  else {return true;}
 }
-getRandomIntInclusive(1,2)
-fitString('1',2)
+getRandomIntInclusive(1,2);
+fitString('1',2);
