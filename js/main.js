@@ -5,12 +5,8 @@ function getRandomIntInclusive(min, max) {
 }//источник:https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 //если минимум больше максимума меняет их местами
 
-function fitString ( stringToTest, maxLeght){
-  const stringToTestStr = String(stringToTest);
-  if (stringToTestStr.length > maxLeght){
-    return false;
-  }
-  else {return true;}
+function fitString ( stringToTest, maxLenght){
+  return stringToTest.length <= maxLenght;
 }
 getRandomIntInclusive(1,2);
-fitString('1',2);
+fitString('111',2);
