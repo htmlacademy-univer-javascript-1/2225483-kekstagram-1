@@ -1,10 +1,10 @@
-let descpiptionsId = 0;
-function createDescpiptionsID () {
-  return descpiptionsId++;
+let descriptionsId = 0;
+function createDescriptionsID () {
+  return descriptionsId++;
 }
 
 let photoId  = 1;
-function createID () {
+function createPhotoID () {
   return photoId ++;
 }
 
@@ -18,4 +18,4 @@ function createCommentsID () {
   return commentsId++;
 }
 
-export {createID, createURL, createCommentsID, createDescpiptionsID};
+export {createPhotoID, createURL, createCommentsID, createDescriptionsID};
