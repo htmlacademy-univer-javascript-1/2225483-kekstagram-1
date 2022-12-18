@@ -1,1 +1,1 @@
-import './rendering';
+import './rendering-mini';

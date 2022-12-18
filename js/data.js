@@ -1,5 +1,5 @@
 import {getRandomArrayElement, getRandomNumber} from './util.js';
-import {createID, createURL, createIDComments} from './counters.js';
+import {createID, createURL, createCommentsID, createDescpiptionsID} from './counters.js';
 
 const NAMES = [
   'Александр',
@@ -29,8 +29,8 @@ const PHOTO_COUNT = 25;
 
 function createComments() {
   return {
-    id: createIDComments(),
-    avatar: `img/avatar${getRandomNumber(1, 6)}.svg`,
+    id: createCommentsID(),
+    avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
     message: getRandomArrayElement(COMMENTS),
     name: getRandomArrayElement(NAMES)
   };
@@ -40,7 +40,7 @@ function createPhotoDescriptions () {
   return {
     id: createID(),
     url: `photos/${createURL()}.jpg`,
-    description: getRandomArrayElement(PHOTO_DESCRIPTIONS),
+    description: PHOTO_DESCRIPTIONS[createDescpiptionsID()],
     likes: getRandomNumber(15, 200),
     comments: Array.from({length: getRandomNumber(1, 5)}, createComments)
   };
