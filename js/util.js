@@ -9,23 +9,23 @@ function getRandomNumber (min, max) {
 
 const isEscape = (evt) => evt.key === 'Escape';
 
-const getRandomElements = (array, elementsCount) => {
+const getRandomElements = (elements, randomElementsCount) => {
   const elementNumbers = [];
-  const randomArray = [];
+  const randomElements = [];
 
-  for(let i = 0; i < array.length; i++){
-    const number = getRandomNumber(0, array.length - 1);
+  for(let i = 0; i < elements.length; i++){
+    const number = getRandomNumber(0, elements.length - 1);
 
     if(elementNumbers.indexOf(number) === -1){
-      randomArray.push(array[number]);
+      randomElements.push(elements[number]);
       elementNumbers.push(number);
     }
 
-    if(randomArray.length === elementsCount){
+    if(randomElements.length === randomElementsCount){
       break;
     }
   }
-  return randomArray;
+  return randomElements;
 };
 
 const debounce = (callback) => {
