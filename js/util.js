@@ -9,19 +9,9 @@ function checkLengthString (line, maximum) {
   return line.length <= maximum;
 }
 
-const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
+const getRandomElement = (array) => array[getRandomNumber(0, array.length - 1)];
+
+const isEscape = (evt) => evt.key === 'Escape';
+
 checkLengthString('14', 2222);
-const isEscapeKey = (evt) => evt.keyCode === 27;
-
-function checkForRepeats (list) {
-  const containerForСomparison = {};
-  for (const element of list) {
-    if (containerForСomparison[element]) {
-      return true;
-    }
-    containerForСomparison[element] = 1;
-  }
-  return false;
-}
-
-export {getRandomArrayElement, getRandomNumber, isEscapeKey, checkForRepeats};
+export {getRandomNumber, getRandomElement, isEscape};

@@ -1,5 +1,4 @@
-import {getRandomArrayElement, getRandomNumber} from './util.js';
-import {createPhotoID, createURL, createCommentsID, createDescriptionsID} from './counters.js';
+import {getRandomNumber, getRandomElement} from './util.js';
 
 const NAMES = [
   'Александр',
@@ -25,27 +24,33 @@ const PHOTO_DESCRIPTIONS = [
   'С семьей',
   'Каникулы проведены на ура!'];
 
-const PHOTO_COUNT = 25;
+const PHOTOS_COUNT = 25;
+const photosArray = [];
 
-function createComments() {
-  return {
-    id: createCommentsID(),
-    avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
-    message: getRandomArrayElement(COMMENTS),
-    name: getRandomArrayElement(NAMES)
-  };
-}
+const addComments = (count) => {
+  const commentsArray = [];
+  for(let i = 0; i < count; i++){
+    commentsArray.push({
+      id: i,
+      avatar: `img/avatar-${getRandomNumber(1, 6)}.svg`,
+      message: getRandomElement(COMMENTS),
+      name: getRandomElement(NAMES)
+    });
+  }
+  return commentsArray;
+};
 
-function createPhotoDescriptions () {
-  return {
-    id: createPhotoID(),
-    url: `photos/${createURL()}.jpg`,
-    description: PHOTO_DESCRIPTIONS[createDescriptionsID()],
-    likes: getRandomNumber(15, 200),
-    comments: Array.from({length: getRandomNumber(1, 25)}, createComments)
-  };
-}
+const addPhotos = () => {
+  for (let i = 0; i < PHOTOS_COUNT; i++){
+    photosArray.push({
+      id: i + 1,
+      url: `photos/${i + 1}.jpg`,
+      description: getRandomElement(PHOTO_DESCRIPTIONS),
+      likes: getRandomNumber(15,200),
+      comments: addComments(getRandomNumber(1,20))
+    });
+  }
+};
 
-const createPhotos = () => Array.from({length: PHOTO_COUNT}, createPhotoDescriptions);
-
-export {createPhotos};
+addPhotos();
+export {photosArray};
