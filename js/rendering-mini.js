@@ -1,9 +1,6 @@
-import { photosArray } from './data.js';
 import { openBigPicture } from './rendering-full.js';
 
-const picturesBlock = document.querySelector('.pictures');
 const pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
-
 const fragment = document.createDocumentFragment();
 
 const renderPhoto = (photo) => {
@@ -21,12 +18,13 @@ const renderPhoto = (photo) => {
   return element;
 };
 
-const renderPhotos = () => {
-  photosArray.forEach((photo) => {
+const renderPhotos = (photos) => {
+  photos.forEach((photo) => {
     fragment.appendChild(renderPhoto(photo));
   });
 
-  picturesBlock.appendChild(fragment);
+  document.querySelector('.pictures').appendChild(fragment);
 };
 
-renderPhotos();
+export {renderPhotos};
+

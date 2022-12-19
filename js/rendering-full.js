@@ -1,4 +1,5 @@
 import { isEscape } from './util.js';
+import { numDecline } from './num-decline.js';
 
 const COMMENTS_STEP = 5;
 
@@ -18,6 +19,7 @@ const createComment = (comment, template) => {
   avatar.src = comment.avatar;
   avatar.alt = comment.name;
   newComment.querySelector('.social__text').textContent = comment.message;
+
   return newComment;
 };
 
@@ -36,7 +38,8 @@ const addComments = () => {
     commentLoader.classList.remove('hidden');
   }
 
-  commentCounter.textContent = `${currentIndex} из ${currentComments.length} комментариев`;
+  const commentsDecline = numDecline(currentComments.length, 'комментария', 'комментариев', 'комментариев');
+  commentCounter.textContent = `${currentIndex} из ${currentComments.length} ${commentsDecline}`;
 
   commentsSelected.forEach((comment) => {
     comments.appendChild(createComment(comment, commentTemplate));
