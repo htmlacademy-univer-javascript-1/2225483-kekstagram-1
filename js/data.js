@@ -42,7 +42,7 @@ function createPhotoDescriptions () {
     url: `photos/${createURL()}.jpg`,
     description: PHOTO_DESCRIPTIONS[createDescriptionsID()],
     likes: getRandomNumber(15, 200),
-    comments: Array.from({length: getRandomNumber(1, 5)}, createComments)
+    comments: Array.from({length: getRandomNumber(1, 25)}, createComments)
   };
 }
 
