@@ -59,7 +59,9 @@ const onFail = () => {
 
 const onFormEscKeyDown = (evt) => {
   if(isEscape(evt)){
-    closeMessage();
+    if(message){
+      closeMessage();
+    }
 
     if (message.classList.contains('success')){
       closeForm();

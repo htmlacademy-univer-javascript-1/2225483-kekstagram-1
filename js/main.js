@@ -1,5 +1,6 @@
 import {sendRequest} from './fetch.js';
 import {renderPhotos} from './rendering-mini.js';
+import './photo-upload.js';
 import './rendering-full.js';
 import './forms.js';
 import './form-validation.js';
