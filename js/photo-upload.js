@@ -5,7 +5,7 @@ const preview = form.querySelector('.user-picture');
 const fileChooser = form.querySelector('.img-upload__input[type=file]');
 const effectsPreview = form.querySelectorAll('.effects__preview');
 
-const onFileChooserChanged = () => {
+const onFileChooserChange = () => {
   const file = fileChooser.files[0];
   const fileName = file.name.toLowerCase();
 
@@ -19,4 +19,4 @@ const onFileChooserChanged = () => {
   }
 };
 
-fileChooser.addEventListener('change', onFileChooserChanged);
+fileChooser.addEventListener('change', onFileChooserChange);

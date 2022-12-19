@@ -20,19 +20,17 @@ const closeForm = () => {
   form.removeEventListener('submit', onFormSubmit);
 };
 
-const onCloseClick = () => {
+const onClosingButtonClick = () => {
   closeForm();
-  closingButton.removeEventListener('click', onCloseClick);
+  closingButton.removeEventListener('click', onClosingButtonClick);
 };
-
-const onClosingButtonClick = () => onCloseClick();
 
 const isNotTarget = (evt) => !evt.target.classList.contains('text__hashtags')
 && !evt.target.classList.contains('text__description');
 
 const onDocumentEscKeyDown = (evt) => {
   if(isEscape(evt) && isNotTarget(evt)){
-    onCloseClick();
+    onClosingButtonClick();
     document.removeEventListener('keydown', onDocumentEscKeyDown);
   }
 };
